@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su.Balance</title>
+    <link rel="stylesheet" href="./css/main2.css">
+    <link rel="stylesheet" href="../static/css/main2.css">
+    <style>
+        img{float: left;}
+        img{margin-right: 20px;
+            margin-bottom: 40px;}
+        .p2{clear:both;}
+    </style>
+</head>
+<body>
+<div class="navigation">
+    <ul>
+        <li>
+            <a href="#">
+                <span class="icon"><i class="fa-sharp fa-solid fa-hotel"></i></span>
+                <span class="title">Su.Balance</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon"><i class="fa-solid fa-users"></i></span>
+                <span class="title">투여량 계산</span>
+            </a>
+        </li>
+        <li>
+            <a href="/news">
+                <span class="icon"><i class="fa-solid fa-sitemap"></i></span>
+                <span class="title">당뇨 뉴스</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon"><i class="fa-solid fa-folder-open"></i></span>
+                <span class="title">커뮤니티</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                <span class="title">로그 아웃</span>
+            </a>
+        </li>
+    </ul>
+</div>
+</div>
+<!-- main -->
+<div class="main">
+    <!-- cards -->
+    <div class="cardBox">
+        <div class="card">
+            <div>
+                <div id="studentsCnt" class="numbers"></div>
+                <div class="cardName">메뉴 1</div>
+            </div>
+            <div class="iconBx">
+                <i class="fa-solid fa-users"></i>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div id="boardCnt" class="numbers"></div>
+                <div class="cardName">메뉴 2</div>
+            </div>
+            <div class="iconBx">
+                <ion-icon name="book-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div id="writerCnt" class="numbers"></div>
+                <div class="cardName">메뉴 3</div>
+            </div>
+            <div class="iconBx">
+                <i class="fa-solid fa-sitemap"></i>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div id="viewsCnt" class="numbers"></div>
+                <div class="cardName">메뉴 4</div>
+            </div>
+            <div class="iconBx">
+                <ion-icon name="eye-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+    <!-- table -->
+    <div class="details">
+        <div class="recentOrders">
+            <div class="cardHeader">
+                <h2>Su.Balance 뉴스</h2>
+            </div>
+            <body>
+                <a href="https://diabetes.or.kr/bbs/?code=news&mode=view&number=1244&page=1&code=news"><p>[당뇨병학연구재단] 6.5km 걷기 캠페인 안내
+                    2023.05.08</p></a>
+                <img src="https://www.diabetes.or.kr/upload/tinymce/383ec603917e2e2fc3f1ece0ad52e2bc.png" width=100 height=100 alt="첫 번째 뉴스">
+                <p>
+                    올해도 당뇨병학연구재단에서 동아쏘시오그룹과 함께 6.5km 걷기 캠페인을 진행합니다.
+                    5월 1일부터 10월 30일까지 65억 걸음 이상이 기부되면 당뇨병학연구재단으로 걸음수이 비례하여 동아쏘시오그룹에서 기부금을 후원할 예정입니다.
+                    걸음 기부는 "빅워크" 어플을 설치 후 휴대폰에 적립된 걸음 수를 어플에서 기부하는 방식으로 진행됩니다.
+                </p>
+            </body>
+            <body>
+            <a href="https://diabetes.or.kr/bbs/?code=news&mode=view&number=1245&page=1&code=news"><p class="p2">[[당뇨병학연구재단] 젊은 당뇨인 꿈 장학금 신청 안내 (6/1~8/31)
+                2023.05.08</p></a>
+            <img src="https://www.diabetes.or.kr/upload/tinymce/510fe6c80520e179be13daef9ea62375.jpg" width=100 height=100 alt="첫 번째 뉴스">
+            <p>
+                젊은 당뇨인 꿈 장학금 지원사업
+
+                - 지원대상: 당뇨병 진단받고 치료유지 기간이 1년 이상 경과한 만 19세~29세
+
+                - 지원규모: 1인 1,000,000원 (총 50명)
+
+                - 신청방법: 담당주치의 또는 의료사회복지사 상담 후 (재)당뇨병학연구재단 홈페이지에 신청서 제출 (신청기간에 게시판이 활성화 됩니다.)
+
+                - 신청기간: 2023년 6월 1일~8월 31일
+
+                - 최종발표: 2023년 10월 초
+            </p>
+            </body>
+
+        </div>
+        <!-- 페이징 처리하는 HTML -->
+        <div class="pagination">
+            <a>Previous</a>
+            <a>1</a>
+            <a>2</a>
+            <a>3</a>
+            <a>4</a>
+            <a>5</a>
+            <a>Next</a>
+        </div>
+    </div>
+</div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+></script>
+<script src="https://kit.fontawesome.com/5f6c1918e3.js" crossorigin="anonymous"></script>
+
+<script>
+    $('#empAdd').click(function(){
+        $('.write-popup').css('display', 'block');
+    });
+    $('.btn-cancel').click(function(){
+        $('.write-popup').css('display', 'none');
+    });
+    $('.btn-close').click(function(){
+        location.reload();//새로 고침
+    });
+    let list = document.querySelectorAll('.navigation li');
+    function activeLink(){
+        list.forEach((item) => {item.classList.remove('hovered')});
+        this.classList.add('hovered');
+    }
+    list.forEach((item) => {item.addEventListener('mouseover',activeLink)});
+
+    function getBoard(){
+        $('.update-popup').css('display', 'block');
+    }
+</script>
+<script src="script.js"></script>

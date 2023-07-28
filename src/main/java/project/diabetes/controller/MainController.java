@@ -6,8 +6,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-    @GetMapping("/main") //임시1
-    public String main1(){
+    @GetMapping("/main")
+    public String main(){
         return "main";
     }
+
+    @GetMapping("/first")
+    public String about(){
+        return "first";
+    }
+
+    @GetMapping("/news")
+    public String shop(){
+        return "news";
+    }
+
 }
