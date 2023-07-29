@@ -37,17 +37,4 @@ public class MainController {
     }
 
 
-    ////////////아래는 원본////////////////
-
-    @GetMapping("/original_dept") // 원본1
-    public String original_dept(){
-        return "original_dept";
-    }
-
-    @GetMapping("/original_index") // 원본2
-    public String original_index(){
-        return "original_index";
-    }
-
-
 }
