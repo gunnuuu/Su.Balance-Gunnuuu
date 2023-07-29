@@ -5,61 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Su.Balance</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/calculator.css">
 </head>
 <body>
     <div class="container">
-
-        <!-- 표 -->
-        <div class="write-popup">
-            <div class="editor">
-                <div class="input-box">
-                    <label for="i_deptno">부서 번호 : </label>
-                    <input id="i_deptno" type="number" placeholder="부서번호를 입력하세요...">
-                </div>
-                <div class="input-box">
-                    <label for="i_dname">부서 이름 : </label>
-                    <input id="i_dname" type="text" placeholder="부서이름을 입력하세요...">
-                </div>
-                <div class="input-box">
-                    <label for="i_loc">근무지 : </label>
-                    <input id="i_loc" type="text" placeholder="근무지를 입력하세요...">
-                </div>
-                <div class="btn-area">
-                    <a href="#" class="btn-cancel">취소</a>
-                    <a href="#" class="btn-success"  onclick="setDept()">등록</a>
-                </div>
-            </div>
-        </div>
-        <!-- 표 끝! -->
-
-        <!-- 표 수정 -->
-        <div class="update-popup">
-            <div class="editor">
-                <div class="close">
-                    <a href="#" class="btn-close">닫기</a>
-                </div>
-                <div class="input-box">
-                    <label for="u_deptno">부서 번호 : </label>
-                    <input id="u_deptno" type="number" value="20" readonly>
-                </div>
-                <div class="input-box">
-                    <label for="u_dname">부서 이름 : </label>
-                    <input id="u_dname" type="text" value="RESEARCH">
-                </div>
-                <div class="input-box">
-                    <label for="u_loc">근무지 : </label>
-                    <input id="u_loc" type="text" value="NEW YORK">
-                </div>
-                <div class="btn-area">
-                    <input id="boardIdHidden" type="hidden">
-                    <a id="contentUpdate" href="#" class="btn-update"  onclick="updateDept()">수정</a>
-                    <a id="contentDelete" href="#" class="btn-delete" onclick="fireDept()">삭제</a>
-                </div>
-            </div>
-        </div>
-        <!-- 표 수정 끝!-->
-
         <div class="navigation">
             <ul>
                 <li>
@@ -108,37 +57,23 @@
          <div class="details">
              <div class="recentOrders">
                  <div class="cardHeader">
-                     <h2>부서 목록</h2>
-                     <a href="#" id="deptAdd" class="btn">부서 추가</a>
+                     <h2>투여량 계산</h2>
                  </div>
-                 <table>
-                     <thead>
-                         <tr>
-                            <th>부서 번호</th>
-                            <th>부서 이름</th>
-                            <th>부서 근무지</th>
-                            <th>사원 수</th>
-                         </tr>
-                     </thead>
-                     <tbody id="deptData">
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                         </tr>
-                     </tbody>
-                 </table>
-                 <!-- 페이징 처리하는 HTML -->
-                 <div class="pagination">
-                    <a>Previous</a>
-                    <a>1</a>
-                    <a>2</a>  	
-                    <a>3</a>
-                    <a>4</a>
-                    <a>5</a>
-                    <a>Next</a>
+                 <br>
+                 식사 종류
+                 &nbsp;&nbsp;&nbsp;
+                 <a href="#" id="breakfast" class="btn">아침식사</a>
+                 &nbsp;&nbsp;&nbsp;
+                 <a href="#" id="lunch" class="btn">점심식사</a>
+                 &nbsp;&nbsp;&nbsp;
+                 <a href="#" id="dinner" class="btn">저녁식사</a>
+                 &nbsp;&nbsp;&nbsp;
+                 <a href="#" id="etc" class="btn">기타</a>
+
+                 <div class="foodCalculator">
+                     <p>test</p>
                  </div>
+
              </div>
          </div>
     </div>
