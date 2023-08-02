@@ -12,7 +12,7 @@
 
 
 
-<body>
+<body id="food_calculator">
     <div class="container">
         <div class="navigation">
             <ul>
@@ -74,10 +74,15 @@
                  <br><br><br>
 
                  <div class = "food"> <!-- 음식 넣는 구역 -->
+
                      <div class="plus_food">음식1: &nbsp;&nbsp;&nbsp;
                          <input type=text name="name" class="food_name" placeholder="이름"> &nbsp;&nbsp;&nbsp;&nbsp;
                          <input type=text name="gram" class="food_g" placeholder="g">
                      </div>
+
+                     <a href="calculator2:addFood()">+</a>
+                     <br><a href="calculator2:addFoodTest()">+_test_+</a>
+                     <br><button type="button" onclick="return test()">test</button>
                  </div>
 
                 <br>
@@ -134,5 +139,6 @@
         $('.update-popup').css('display', 'block');
     }
 </script>
-<script src="/js/dept.js"></script>
+<script src="/js/calculator.js"></script>
+<script src="/js/calculator2.js"></script>
 </html>
