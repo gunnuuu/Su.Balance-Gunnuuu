@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Su.Balance</title>
     <link rel="stylesheet" href="/css/calculator.css">
-    <link rel="stylesheet" href="/css/calculator_2.css">
+    <link rel="stylesheet" href="/css/calculator2.css">
 </head>
 
 
@@ -62,53 +62,52 @@
          <div class="details">
              <div class="recentOrders">
                  <div class="cardHeader">
-                     <h2>투여량 계산</h2>
+                     <h2 style="font-size:30px">투여량 계산</h2>
                  </div>
                  <br>
-                 식사 종류 : &nbsp;&nbsp;&nbsp;
-                 <a href="#" id="breakfast" class="btn">아침식사</a>&nbsp;&nbsp;&nbsp;
-                 <a href="#" id="lunch" class="btn">점심식사</a>&nbsp;&nbsp;&nbsp;
-                 <a href="#" id="dinner" class="btn">저녁식사</a>&nbsp;&nbsp;&nbsp;
-                 <a href="#" id="etc" class="btn">&nbsp;&nbsp;기타&nbsp;&nbsp;</a>
+                 <span style="font-size:22px">식사 종류 :</span> &nbsp;&nbsp;&nbsp;
+                 <a href="#" id="breakfast" class="btn_ct">아침식사</a>&nbsp;&nbsp;&nbsp;
+                 <a href="#" id="lunch" class="btn_ct">점심식사</a>&nbsp;&nbsp;&nbsp;
+                 <a href="#" id="dinner" class="btn_ct">저녁식사</a>&nbsp;&nbsp;&nbsp;
+                 <a href="#" id="etc" class="btn_ct">&nbsp;&nbsp;기타&nbsp;&nbsp;</a>
 
                  <br><br><br>
 
                  <div class = "food"> <!-- 음식 넣는 구역 -->
-
-                     <div class="plus_food">음식1: &nbsp;&nbsp;&nbsp;
-                         <input type=text name="name" class="food_name" placeholder="이름"> &nbsp;&nbsp;&nbsp;&nbsp;
+                     <div class="plus_food">음식1: &nbsp;&nbsp;
+                         <input type=text name="name" class="food_name" placeholder="이름"> &nbsp;&nbsp;&nbsp;
                          <input type=text name="gram" class="food_g" placeholder="g">
                      </div>
+                     <!-- 박스 추가되는 영역 -->
+                     <div id="boxWrap">
 
-                     <a href="calculator2:addFood()">+</a>
-                     <br><a href="calculator2:addFoodTest()">+_test_+</a>
-                     <br><button type="button" onclick="return test()">test</button>
+                     </div>
+                     <div class="btnWrap">
+                         <button type="button" class="button">+</button>
+                     </div>
                  </div>
 
                 <br>
 
-                 <span class = "warning">ex) 채소의 비중이 너무 적습니다. 야채를 더 먹길 추천드려요</span>
-                 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                 <span href="#" id="result_btn" class="btn">계산</span>
+                 <span class = "warning" style="font-size: 18px">ex) 채소의 비중이 너무 적습니다. 야채를 더 먹길 추천드려요</span>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <span href="#" id="result_btn" class="btn_result">계산</span>
                  <a class="result">8단위 주사하십시오</a>
 
-                 <br> <br> <br> <br> <br>
+                 <br><br><br>
 
                  <div class ="nutrient">
-                     탄수화물 :
+                     <span style="font-size:20px">탄수화물 : </span>
                      <progress class="progress" id="carbohydrate" value="50" min="0" max="100"></progress>
-                     &nbsp;&nbsp;&nbsp;&nbsp;단백질 :
+                     &nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:20px">단백질 : </span>
                      <progress class="progress" id="protein" value="30" min="0" max="100"></progress>
-                     &nbsp;&nbsp;&nbsp;&nbsp;지방 :
+                     &nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:20px">지방 : </span>
                      <progress class="progress" id="province" value="80" min="0" max="100"></progress>
                  </div>
              </div>
          </div>
     </div>
 </body>
-
-
-
 
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -139,6 +138,6 @@
         $('.update-popup').css('display', 'block');
     }
 </script>
-<script src="/js/calculator.js"></script>
-<script src="/js/calculator2.js"></script>
+<script type="text/javascript" src="/js/calculator.js"></script>
+<script type="text/javascript" src="/js/calculator2.js"></script>
 </html>

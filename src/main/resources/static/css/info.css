@@ -152,14 +152,13 @@ body{
     box-shadow: 0 7px 25px rgba(0,0,0,0.2);
     border-radius: 20px;
 }
-
 .cardHeader{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 .cardHeader h2{
-    font-weight: 500;
+    font-weight: 600;
     color: var(--blue);
 }
 .excel-btn{
@@ -178,7 +177,6 @@ body{
     color: var(--white);
     border-radius: 6px;
 }
-
 .details table{
     width: 100%;
     border-collapse: collapse;

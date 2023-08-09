@@ -1,0 +1,21 @@
+news{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.news_img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+
+.news_p{
+    clear:both;
+}
+
