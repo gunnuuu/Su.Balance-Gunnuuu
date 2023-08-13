@@ -16,11 +16,11 @@
 }
 
 .food_name{
-    width: 150px;
+    width: 200px;
     height: 25px;
 }
 .food_g{
-    width: 130px;
+    width: 180px;
     height: 25px;
 }
 
@@ -101,7 +101,7 @@
 .button {
     position: relative;
     top: 10px;
-    left: 230px;
+    left: 260px;
     min-width: 35px;
     min-height: 35px;
     background-color:#5CB8E4;
@@ -114,6 +114,12 @@
     background-color: #25a4cd;
 }
 
+/* 연관검색어 */
+.ui-autocomplete{
+    max-height: 300px;
+    overflow-y: auto; /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}
 
 /* 전체 설정 */
 input::-webkit-input-placeholder { font-size: 90%; text-align: center; }

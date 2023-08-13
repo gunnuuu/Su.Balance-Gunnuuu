@@ -10,5 +10,9 @@ public class CalculatorController {
         return "calculator";
     }
 
+    @GetMapping("/test") //연관 검색어 테스트
+    public String test(){
+        return "test";
+    }
 
 }
