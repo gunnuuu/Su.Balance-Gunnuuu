@@ -7,7 +7,7 @@ $(document).ready(function() {
   $("button").click(function() {
 
     $("#boxWrap").append("<div class='plus_food'>음식"+(1+i)+": &nbsp;&nbsp;&nbsp;"
-                            +"<input type=text name='name' class='food_name' placeholder='이름'> &nbsp;&nbsp;&nbsp;&nbsp;"
+                            +"<input type=text name='name' class='food_name' id='autoComplete' placeholder='이름'> &nbsp;&nbsp;&nbsp;&nbsp;"
                             +"<input type=text name='gram' class='food_g' placeholder='g'>"
                           +"</div>");
 
