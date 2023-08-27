@@ -1,30 +1,26 @@
 package project.diabetes.domain;
 
 import lombok.Getter;
-import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Setter
-public class Food { // food_record
+@ToString
+public class Food {
 
     @Id @GeneratedValue
-    @Column(name="food_id")
-    private Long id;
-
-    // private Long memberId;
+    @Column(name="SEQ")
+    private long id;
+    private String category;
+    @Column(name="SEARCH_WORD")
     private String name;
-    private int g;
     private float carbohydrate;
     private float protein;
     private float fat;
-    private LocalDateTime inputDate;
-    private String category;
 
 }

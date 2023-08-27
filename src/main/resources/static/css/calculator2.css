@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 /* 음식추가 받는 창 */
 .food{
     position: relative;
@@ -28,6 +30,7 @@
 .warning{
     color: red;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .nutrient{
@@ -36,11 +39,10 @@
 
 .result{
     position: relative;
-    left: 100px;
-    bottom: 200px;
     font-size: 30px;
     font-weight: bold;
-
+    left: 700px;
+    bottom: 200px;
 }
 
 .btn_ct{
@@ -63,6 +65,7 @@
     text-decoration: none;
     color: var(--white);
     border-radius: 6px;
+    left: 280px;
 }
 .btn_result:active {
     background-color: #25a4cd;
