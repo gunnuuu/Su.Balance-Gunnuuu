@@ -1,131 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Su.Balance</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script>
+        window.onload = function() {
+            var today = new Date(); // 현재 날짜와 시간을 가져옴
+            var year = today.getFullYear(); // 현재 연도
+            var month = today.getMonth() + 1; // 현재 월 (0부터 시작하므로 1을 더해줌)
+            var day = today.getDate(); // 현재 일
+
+            var formattedDate = year + "-" + (month < 10 ? "0" + month : month) + "-" + (day < 10 ? "0" + day : day);
+
+            // 가져온 날짜를 HTML 요소에 설정
+            document.getElementById("date").textContent = formattedDate;
+        };
+    </script>
 </head>
+
 <body>
-    <div class="navigation">
-        <ul>
-            <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="heart-circle-outline"></ion-icon></span>
-                    <span class="title">Su.Balance</span>
-                </a>
-            </li>
-            <li>
-                <a href="/info">
-                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="title">홈</span>
-                </a>
-            </li>
-            <li>
-                <a href="/calculator">
-                    <span class="icon"><ion-icon name="calculator-outline"></ion-icon></span>
-                    <span class="title">투여량 계산</span>
-                </a>
-            </li>
-            <li>
-                <a href="/record">
-                    <span class="icon"><ion-icon name="calendar-outline"></ion-icon></ion-icon></span>
-                    <span class="title">혈당 일지</span>
-                </a>
-            </li>
-            <li>
-                <a href="/news">
-                    <span class="icon"><ion-icon name="ear-outline"></ion-icon></span>
-                    <span class="title">당뇨 뉴스</span>
-                </a>
-            </li>
-            <li>
-                <a href="/board">
-                    <span class="icon"><ion-icon name="list-outline"></ion-icon></span>
-                    <span class="title">게시판</span>
-                </a>
-            </li>
-        </ul>
-    </div>
+<div class="navigation">
+    <ul>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="heart-circle-outline"></ion-icon></span>
+                <span class="title">Su.Balance</span>
+            </a>
+        </li>
+        <li>
+            <a href="/info">
+                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                <span class="title">홈</span>
+            </a>
+        </li>
+        <li>
+            <a href="/calculator">
+                <span class="icon"><ion-icon name="calculator-outline"></ion-icon></span>
+                <span class="title">투여량 계산</span>
+            </a>
+        </li>
+        <li>
+            <a href="/record">
+                <span class="icon"><ion-icon name="calendar-outline"></ion-icon>
+                    </ion-icon></span>
+                <span class="title">혈당 등록</span>
+            </a>
+        </li>
+        <li>
+            <a href="/news">
+                <span class="icon"><ion-icon name="ear-outline"></ion-icon></span>
+                <span class="title">당뇨 뉴스</span>
+            </a>
+        </li>
+        <li>
+            <a href="/board">
+                <span class="icon"><ion-icon name="list-outline"></ion-icon></span>
+                <span class="title">혈당 일지</span>
+            </a>
+        </li>
+    </ul>
 </div>
+
+<form class="container" th:action="@{/record/save}" th:method="post">
     <!-- main -->
     <div class="main">
-    <!-- table -->
-    <div class="details">
-        <div class="recentOrders">
-            <div class="cardHeader">
-                <h2>Gunnuu님의 혈당 일지</h2>
+        <!-- table -->
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Gunnuuu님의 혈당 등록</h2>
+                </div>
+
+                <a><font size ="5">오늘 날짜 : <span id="date"></span></font></a>
+                <table>
+                    <thead>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-box">
+                                <label>
+                                    <input name="amount" type="number" placeholder="인슐린 투여량을 입력하시오" style="width:500px;height:60px;font-size:30px;">
+                                </label>
+                            </div>
+                        <td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-box">
+                                <label>
+                                    <input name="glucose" type="text" placeholder="식후혈당을 입력하시오" style="width:500px;height:60px;font-size:30px;">
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    </thead>
+                </table>
+                <div class="pagination">
+                    <font size ="5" >입력 후 해당하는 버튼을 눌러주세요 => </font>
+                    <button type="submit" onclick=""><a>기억이 나지 않을 경우</a></button>
+                    <button type="submit" onclick=""><a>혈당일지에 추가하기</a></button>
+                </div>
             </div>
-            <table>
-                <thead>
-                <tr>
-                    <th>날 짜</th>
-                    <th>아침</th>
-                    <th></th>
-                    <th>점심</th>
-                    <th></th>
-                    <th>저녁</th>
-                    <th></th>
-                    <th>특이 사항</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <thead>
-                <tr>
-                    <th>7월</th>
-                    <th>투여량</th>
-                    <th>식후혈당</th>
-                    <th>투여량</th>
-                    <th>식후혈당</th>
-                    <th>투여량</th>
-                    <th>식후혈당</th>
-                    <th>ex)혈당이 밀림</th>
-                </tr>
-                </thead>
-                <thead>
-                <tr>
-                    <th>1</th> <!-- 입력구역 -->
-                    <th>
-                        <div class="input-box">
-                        <input id="m_투여량" type="number">
-                        </div>
-                    </th>
-                    <th>
-                        <div class="input-box">
-                            <input id="m_식후혈당" type="text">
-                        </div>
-                    </th>
-                    <th>
-                        <div class="input-box">
-                            <input id="l_투여량" type="number">
-                        </div>
-                    </th>
-                    <th>
-                        <div class="input-box">
-                            <input id="l_식후혈당" type="text">
-                        </div>
-                    </th>
-                    <th>
-                        <div class="input-box">
-                            <input id="d_투여량" type="number">
-                        </div>
-                    </th>
-                    <th>
-                        <div class="input-box">
-                            <input id="d_식후혈당" type="text">
-                        </div>
-                    </th>
-                    <th>
-                        <div class="input-box">
-                            <input id="특이사항" type="text">
-                        </div>
-                    </th>
-                </tr>
-                </thead>
-            </table>
+        </div>
     </div>
+</form>
 </body>
+
+
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script
@@ -157,3 +145,4 @@
     }
 </script>
 <script src="/js/script.js"></script>
+</html>

@@ -9,10 +9,8 @@ public class MainController {
     public String about(){
         return "first";
     }
-
-    @GetMapping("/board")  //게시판 페이지
-    public String board(){
-        return "board";
+    @GetMapping("/record") //혈당등록 페이지
+    public String record(){
+        return "record";
     }
-
 }

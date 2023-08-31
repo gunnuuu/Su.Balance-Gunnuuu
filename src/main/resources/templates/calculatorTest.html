@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Su.Balance</title>
-    <link rel="stylesheet" href="/css/calculator.css">
+    <link rel="stylesheet" href="/css/calculatorTest.css">
     <link rel="stylesheet" href="/css/calculatorTest2.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="/js/code.jquery.com_jquery-3.7.0.min.js"></script>
@@ -80,8 +80,14 @@
                              <button type="button" class="button">+</button>
                          </div>
                      </div>
-                     <br>
-                     <button type="submit" id="result_btn" class="btn_result">테스트</button>
+                     <div class="plusTest">
+                         <div class="forTest">
+                             투여량:&nbsp; <input type="text" name="amount" class="amount" placeholder="8"><br><br>
+                             2시간 뒤 혈당:&nbsp; <input type="text" name="glucose" class="glucose" placeholder="100">
+                         </div>
+                         <br>
+                         <button type="submit" id="result_btn" class="btn_result">테스트</button>
+                     </div>
                  </form>
              </div>
          </div>

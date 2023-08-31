@@ -65,7 +65,7 @@
     text-decoration: none;
     color: var(--white);
     border-radius: 6px;
-    left: 530px;
+    left: 300px;
 }
 .btn_result:active {
     background-color: #25a4cd;
@@ -148,6 +148,34 @@
   border:1px solid #5CB8E4;
   background:#5CB8E4;
   color:#fff;
+}
+
+.forTest{
+    position: relative;
+    width: 350px;
+    height: 100px;
+    background-color: var(--grey);
+    padding: 25px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    overflow: auto;
+    font-size: 22px;
+}
+
+.plusTest{
+    position:relative;
+    left: 670px;
+    bottom: 250px;
+}
+
+.amount{
+    width: 100px;
+    height: 25px;
+}
+
+.glucose{
+    width: 100px;
+    height: 25px;
 }
 
 

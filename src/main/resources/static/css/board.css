@@ -1,0 +1,14 @@
+.high{
+    background-color: red;
+    color: white;
+}
+
+.low{
+    background-color: blue;
+    color: white;
+}
+
+.normal{
+    background-color: black;
+    color: white;
+}

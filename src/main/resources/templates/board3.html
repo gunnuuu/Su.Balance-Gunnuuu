@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su.Balance</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/board.css">
+    <script>
+        window.onload = function() {
+            var today = new Date(); // 현재 날짜와 시간을 가져옴
+            var year = today.getFullYear(); // 현재 연도
+            var month = today.getMonth() + 1; // 현재 월 (0부터 시작하므로 1을 더해줌)
+            var day = today.getDate(); // 현재 일
+
+            var formattedDate = year + "-" + (month < 10 ? "0" + month : month) + "-" + (day < 10 ? "0" + day : day);
+
+            // 각각의 span 요소에 가져온 날짜를 설정
+            var dateSpans = document.querySelectorAll('.date-span');
+            dateSpans.forEach(function(span) {
+                span.textContent = formattedDate;
+            });
+        };
+    </script>
+    <script>
+        function openPopup() {
+            // 팝업 창을 중앙에 위치시키고 크기를 설정
+            var popupWindow = window.open('graph', '팝업 창', 'width=1000,height=350,top=100,left=100');
+            // 팝업 창이 차단되지 않도록 포커스 설정
+            popupWindow.focus();
+        }
+    </script>
+</head>
+
+<body>
+<div class="navigation">
+    <ul>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="heart-circle-outline"></ion-icon></span>
+                <span class="title">Su.Balance</span>
+            </a>
+        </li>
+        <li>
+            <a href="/info">
+                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                <span class="title">홈</span>
+            </a>
+        </li>
+        <li>
+            <a href="/calculator">
+                <span class="icon"><ion-icon name="calculator-outline"></ion-icon></span>
+                <span class="title">투여량 계산</span>
+            </a>
+        </li>
+        <li>
+            <a href="/record">
+                <span class="icon"><ion-icon name="calendar-outline"></ion-icon></ion-icon></span>
+                <span class="title">혈당 등록</span>
+            </a>
+        </li>
+        <li>
+            <a href="/news">
+                <span class="icon"><ion-icon name="ear-outline"></ion-icon></span>
+                <span class="title">당뇨 뉴스</span>
+            </a>
+        </li>
+        <li>
+            <a href="/board">
+                <span class="icon"><ion-icon name="list-outline"></ion-icon></span>
+                <span class="title">혈당 일지</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- main -->
+<div class="main">
+    <!-- table -->
+    <div class="details">
+        <div class="recentOrders">
+            <div class="cardHeader">
+                <h2>Gunnuu님의 혈당 일지 </h2>
+            </div>
+            <table>
+                <thead>
+                <tr>
+                    <th>날 짜</th>
+                    <th>아침</th>
+                    <th></th>
+                    <th>점심</th>
+                    <th></th>
+                    <th>저녁</th>
+                    <th></th>
+
+                </tr>
+                </thead>
+                <thead>
+                <tr>
+                    <th>yyyy-mm-dd</th>
+                    <th>투여량</th>
+                    <th>식후혈당</th>
+                    <th>투여량</th>
+                    <th>식후혈당</th>
+                    <th>투여량</th>
+                    <th>식후혈당</th>
+                </tr>
+
+                <tr th:each="iterStat : ${#numbers.sequence(0, (numericRecordList.size() - 1) / 6)}">
+                    <th>
+                        <span th:id="'date-' + ${iterStat}" class="date-span"></span>
+                    </th>
+                    <th th:each="index : ${#numbers.sequence(iterStat * 6, iterStat * 6 + 5)}"
+                        th:if="${index < numericRecordList.size()}">
+                <span th:if="${numericRecordList[index] != null}">
+                    <span th:class="${index % 2 == 1 && numericRecordList[index] >= 200 ? 'high' :
+                                   index % 2 == 1 && numericRecordList[index] <= 70 ? 'low' : ''}">
+                        <span th:text="${index % 2 == 1 && numericRecordList[index] >= 200 ? numericRecordList[index] + ' 고혈당 ' :
+                                        index % 2 == 1 && numericRecordList[index] <= 70 ? numericRecordList[index] + ' 저혈당 ' : numericRecordList[index]}">
+                        </span>
+                    </span>
+                </span>
+                        <span th:if="${numericRecordList[index] == null}" th:text="기억x"></span>
+                    </th>
+                </tr>
+            </table>
+            <div class="pagination">
+                <button onclick="openPopup()"><a>혈당그래프 확인하기</a></button>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <a href="http://localhost:8080/board">1</a>
+            <a href="http://localhost:8080/board2">2</a>
+            <a href="http://localhost:8080/board3">3</a>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+></script>
+<script src="https://kit.fontawesome.com/5f6c1918e3.js" crossorigin="anonymous"></script>
+
+<script>
+    $('#empAdd').click(function(){
+        $('.write-popup').css('display', 'block');
+    });
+    $('.btn-cancel').click(function(){
+        $('.write-popup').css('display', 'none');
+    });
+    $('.btn-close').click(function(){
+        location.reload();//새로 고침
+    });
+    let list = document.querySelectorAll('.navigation li');
+    function activeLink(){
+        list.forEach((item) => {item.classList.remove('hovered')});
+        this.classList.add('hovered');
+    }
+    list.forEach((item) => {item.addEventListener('mouseover',activeLink)});
+
+    function getBoard(){
+        $('.update-popup').css('display', 'block');
+    }
+</script>
+<script src="/js/script.js"></script>

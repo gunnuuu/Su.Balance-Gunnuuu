@@ -5,76 +5,138 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Su.Balance</title>
-    <link rel="stylesheet" href="/css/info.css">
-    <link rel="stylesheet" href="/css/info2.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        img{float: left;}
+        img{margin-right: 20px;
+            margin-bottom: 40px;}
+        .p2{clear:both;}
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="navigation">
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="heart-circle-outline"></ion-icon></span>
-                        <span class="title">Su.Balance</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/info">
-                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                        <span class="title">홈</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/calculator">
-                        <span class="icon"><ion-icon name="calculator-outline"></ion-icon></span>
-                        <span class="title">투여량 계산</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/record">
-                        <span class="icon"><ion-icon name="calendar-outline"></ion-icon></ion-icon></span>
-                        <span class="title">혈당 일지</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/news">
-                        <span class="icon"><ion-icon name="ear-outline"></ion-icon></span>
-                        <span class="title">당뇨 뉴스</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/board">
-                        <span class="icon"><ion-icon name="list-outline"></ion-icon></span>
-                        <span class="title">게시판</span>
-                    </a>
-                </li>
-            </ul>
+<div class="navigation">
+    <ul>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="heart-circle-outline"></ion-icon></span>
+                <span class="title">Su.Balance</span>
+            </a>
+        </li>
+        <li>
+            <a href="/info">
+                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                <span class="title">홈</span>
+            </a>
+        </li>
+        <li>
+            <a href="/calculator">
+                <span class="icon"><ion-icon name="calculator-outline"></ion-icon></span>
+                <span class="title">투여량 계산</span>
+            </a>
+        </li>
+        <li>
+            <a href="/record">
+                <span class="icon"><ion-icon name="calendar-outline"></ion-icon></ion-icon></span>
+                <span class="title">혈당 일지</span>
+            </a>
+        </li>
+        <li>
+            <a href="/news">
+                <span class="icon"><ion-icon name="ear-outline"></ion-icon></span>
+                <span class="title">당뇨 뉴스</span>
+            </a>
+        </li>
+        <li>
+            <a href="/board">
+                <span class="icon"><ion-icon name="list-outline"></ion-icon></span>
+                <span class="title">게시판</span>
+            </a>
+        </li>
+    </ul>
+</div>
+</div>
+<!-- main -->
+<div class="main">
+    <!-- cards -->
+    <div class="cardBox">
+        <div class="card">
+            <div>
+                <div id="studentsCnt" class="numbers"></div>
+                <div class="cardName">개인 정보</div>
+            </div>
+            <div class="iconBx">
+                <i class="fa-solid fa-users"></i>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div id="boardCnt" class="numbers"></div>
+                <div class="cardName">Su.Balance란</div>
+            </div>
+            <div class="iconBx">
+                <ion-icon name="book-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div id="writerCnt" class="numbers"></div>
+                <div class="cardName">사용 Tips</div>
+            </div>
+            <div class="iconBx">
+                <i class="fa-solid fa-sitemap"></i>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div id="viewsCnt" class="numbers"></div>
+                <div class="cardName">로그아웃</div>
+            </div>
+            <div class="iconBx">
+                <ion-icon name="eye-outline"></ion-icon>
+            </div>
         </div>
     </div>
+    <!-- table -->
+    <div class="details">
+        <div class="recfentOrders">
+            <body>
+            <div class="container">
+                <div class="cardHeader">
+                    <h2>현재 개인 정보</h2>
+                </div>
+                <div class="input-box">
+                    <label>이름(id) : gunnuuu</label>
+                    <label>비밀번호 : a1234!</label>
+                    <label>키: 171</label>
+                    <label>몸무게: 63</label>
+                    <label>IRS: 3단위</label>
+                </div>
+            </div>
+            </body>
 
-    <!-- main -->
-    <div class="main">
-         <!-- table -->
-         <div class="details">
+            <body>
+            <div class="container">
+                <div class="cardHeader">
+                    <h2>개인 정보 수정</h2>
+                </div>
 
-             <div class="recentOrders">
-                 <div class="cardHeader">
-                     <h2 style="font-size:30px">메인 화면</h2>
-                 </div>
-
-             </div>
-         </div>
+            </div>
+            </body>
+        </div>
     </div>
+</div>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+></script>
+<script src="https://kit.fontawesome.com/5f6c1918e3.js" crossorigin="anonymous"></script>
+
 <script>
-    $('#deptAdd').click(function(){
+    $('#empAdd').click(function(){
         $('.write-popup').css('display', 'block');
     });
     $('.btn-cancel').click(function(){
@@ -94,5 +156,4 @@
         $('.update-popup').css('display', 'block');
     }
 </script>
-<script src="/js/dept.js"></script>
-</html>
+<script src="/js/script.js"></script>

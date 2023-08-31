@@ -119,7 +119,7 @@ public class CalculatorController {
     }
 
     @PostMapping("/calculatorTest")
-    public String calculateTest(Model model, @ModelAttribute(value = "FoodFormListDto") FoodFormListDto foodlist) {
+    public String calculateTest(Model model, @ModelAttribute(value = "FoodFormListDto") FoodFormListDto foodlist, int amount, int glucose) {
         //사이트에서 name 이랑 g 가져오기 (여러개임)
 
         List<String> namelist = new ArrayList<>();
@@ -152,9 +152,14 @@ public class CalculatorController {
             carbohydrateSum += real_carbohydrate;
         }
         System.out.println("carbohydrateSum = " + carbohydrateSum);
+        System.out.println("amount = " + amount);
+        System.out.println("glucose = " + glucose);
+
+
+
 
         int icr=0;
-        model.addAttribute("icr", icr);
+        // 이거 member 에 다시 넣어야함
 
         return "/info";
     }
