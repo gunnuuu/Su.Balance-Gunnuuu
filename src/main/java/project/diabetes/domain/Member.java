@@ -16,4 +16,13 @@ public class Member {
     private String name;
     private int age;
     private char sex;
+    private Integer icr;
+    private float height;
+    private float weight;
+    private float goal;
+
+    private String userId;
+
+
+
 }

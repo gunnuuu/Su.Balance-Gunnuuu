@@ -20,6 +20,19 @@ public class CalculatorRepository{
                 .getSingleResult();
     }
 
+    // 음식이 데이터에 존재하는지 확인
+    public boolean checkFood(String name){
+        try {
+            em.createQuery("select f from Food f where f.name=:name", Food.class)
+                    .setParameter("name", name)
+                    .getSingleResult();
+            return true;
+        } catch (Exception e){
+            return false;
+        }
+    }
+
+
     public void saveFoodRecord(FoodRecord foodRecord){
         em.persist(foodRecord);
     }

@@ -30,6 +30,7 @@ public class FoodRecord{ // food_record
 
     private LocalDateTime inputDate = LocalDateTime.now(); //자동으로
     private String category; // food 에서
+    private Long member_id;
 
     public FoodRecord() {
     }

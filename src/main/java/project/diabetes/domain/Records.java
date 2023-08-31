@@ -2,6 +2,7 @@ package project.diabetes.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,11 +12,16 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class Board {
+@ToString
+public class Records {
 
     @Id @GeneratedValue
-    private long id;
+    @Column(name = "record_id")
+    private Long id;
+    private int amount;
+    private int glucose;
+    private int changed;
+    private int carbohydrateSum;
+    private Long member_id;
 
-    private String title;
-    private String content; //나중에 String값 변경 요망
 }

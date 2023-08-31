@@ -37,6 +37,10 @@ public class CalculatorService {
         return calculatorRepository.findFoodRecord(id);
     }
 
+    public boolean checkFood(String name){
+        return calculatorRepository.checkFood(name);
+    }
+
 
     public List<Integer> getProgress() {
         LocalDateTime nowDate = LocalDateTime.now();

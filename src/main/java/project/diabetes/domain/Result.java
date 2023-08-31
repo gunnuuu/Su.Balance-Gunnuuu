@@ -2,20 +2,27 @@ package project.diabetes.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
 @Setter
-public class Insulin {
-    @Id @GeneratedValue
-    private long id;
-    private long member_id; //foreign key
-    private LocalDateTime write_date;
+@ToString
+public class Result {
+
+    @Id@GeneratedValue
+    @Column(name="result_id")
+    private Long id;
     private int amount;
+    private int glucose;
+    private int carbohydrateSum;
+    private Integer icr;
+    private int goal;
+    private Long member_id;
+
 }

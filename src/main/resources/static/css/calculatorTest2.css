@@ -65,7 +65,7 @@
     text-decoration: none;
     color: var(--white);
     border-radius: 6px;
-    left: 280px;
+    left: 530px;
 }
 .btn_result:active {
     background-color: #25a4cd;

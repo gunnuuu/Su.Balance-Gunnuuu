@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Su.Balance</title>
     <link rel="stylesheet" href="/css/calculator.css">
-    <link rel="stylesheet" href="/css/calculator2.css">
+    <link rel="stylesheet" href="/css/calculatorTest2.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="/js/code.jquery.com_jquery-3.7.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -63,47 +63,26 @@
          <div class="details">
              <div class="recentOrders">
                  <div class="cardHeader">
-                     <h2 style="font-size:30px">투여량 계산</h2>
+                     <h2 style="font-size:30px">투여량 테스트</h2>
                  </div>
-                 <form th:action="@{/calculator}" th:method="post">
-                     <!-- 식사 간식 여부 -->
-                     <label class="box-radio-input">
-                         <input type="radio" name="meal" value="식사" checked="checked"><span>식사</span>
-                     </label>
-                     &nbsp;&nbsp;&nbsp;
-                     <label class="box-radio-input">
-                         <input type="radio" name="meal" value="간식"><span>간식</span>
-                     </label>
-                     <br><br>
-
+                 <strong>첫 이용자들은 필수적으로 해야하는 투여량 테스트입니다.</strong><br>
+                 <strong>평소 자신의 식단과 투여량, 2시간 뒤 혈당을 입력해 주십시오.</strong>
+                 <br><br>
+                 <form th:action="@{/calculatorTest}" th:method="post">
                      <div class = "food"> <!-- 음식 넣는 구역 -->
                          <div class="plus_food">음식1: &nbsp;&nbsp;
                              <input type=text name="foodlist[0].name" class="food_name" id='autoComplete' placeholder="이름"> &nbsp;&nbsp;&nbsp;
                              <input type=text name="foodlist[0].gram" class="food_g" placeholder="g">
                          </div>
                          <!-- 박스 추가되는 영역 -->
-                         <div id="boxWrap">
-
-                         </div>
-
+                         <div id="boxWrap"> </div>
                          <div class="btnWrap">
                              <button type="button" class="button">+</button>
                          </div>
                      </div>
-                     <a class="result">8단위 주사하십시오</a>
-                     <button type="submit" id="result_btn" class="btn_result">계산</button>
                      <br>
-                     <span class = "warning"><pre style="font-family:맑은고딕;" th:text="${warning}"></pre></span>
+                     <button type="submit" id="result_btn" class="btn_result">테스트</button>
                  </form>
-
-                 <div class ="nutrient">
-                     <span style="font-size:20px">탄수화물 : </span>
-                     <progress class="progress" id="carbohydrate" th:value="${progressList.get(0)}" min="0" max="1300"></progress>
-                     &nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:20px">단백질 : </span>
-                     <progress class="progress" id="protein" th:value="${progressList.get(1)}" min="0" max="100"></progress>
-                     &nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:20px">지방 : </span>
-                     <progress class="progress" id="fat" th:value="${progressList.get(2)}" min="0" max="70"></progress>
-                 </div>
              </div>
          </div>
     </div>
