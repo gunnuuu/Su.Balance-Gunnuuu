@@ -19,8 +19,8 @@ public class RecordsEntity {
     @Column(name = "record_id")
     private Long id;
 
-    private int amount;
-    private int glucose;
+    private Integer amount;
+    private Integer glucose;
     private int carbohydrateSum;
     private Long member_id;
 

@@ -26,7 +26,7 @@ public class CalculatorController {
     public String calculator(Model model){
 
         Member member = new Member();
-        //member.setIcr(10);
+        member.setIcr(10);
 
         if (member.getIcr() == null){
             return "calculatorTest";
