@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import project.diabetes.controller.RecordsDto;
 
 import javax.persistence.*;
 import java.util.Arrays;
@@ -11,7 +12,6 @@ import java.util.Arrays;
 @Entity
 @Getter
 @Setter
-@ToString
 @Table(name = "records")
 public class RecordsEntity {
 
@@ -25,9 +25,6 @@ public class RecordsEntity {
     private Long member_id;
 
 
-    public RecordsEntity() {
-    }
-
     public RecordsEntity(Integer amount, Integer glucose) {
         this.amount = amount;
         this.glucose = glucose;
@@ -37,7 +34,6 @@ public class RecordsEntity {
     public String toString() {
         return  amount + "," + glucose;
     }
-
     public String split(String s) {
         return Arrays.toString(s.split(","));
     }

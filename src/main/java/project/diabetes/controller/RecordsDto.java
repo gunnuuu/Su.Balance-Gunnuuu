@@ -1,8 +1,14 @@
 package project.diabetes.controller;
 
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import project.diabetes.domain.RecordsEntity;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class RecordsDto {
 
     private Integer amount;
@@ -20,7 +26,7 @@ public class RecordsDto {
     }
 
     public RecordsEntity toEntity() {
-        return new RecordsEntity(amount, glucose);
+        return new RecordsEntity(this.amount, this.glucose);
     }
 
 }

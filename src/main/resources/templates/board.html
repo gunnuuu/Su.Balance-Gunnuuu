@@ -116,7 +116,7 @@
                                                     index % 2 == 1 && numericRecordList[index] <= 70 ? numericRecordList[index] + ' 저혈당 ' : numericRecordList[index]}">
                                     </span>
                                     <script th:inline="javascript">
-                                        var glucose = /*[[${index % 2 == 1 ? numericRecordList[index] : ''}]]*/;
+                                         var glucose = /*[[${index % 2 == 1 ? numericRecordList[index] : ''}]]*/;
 
                                         if (glucose !== '' && glucose >= 200) {
                                             setTimeout(function() {
