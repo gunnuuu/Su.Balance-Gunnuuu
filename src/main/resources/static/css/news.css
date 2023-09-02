@@ -7,14 +7,6 @@ news{
     overflow-x: hidden;
 }
 
-.news_img {
-    float: left;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-    margin-bottom: 40px;
-}
-
 .news_p{
     clear:both;
 }
